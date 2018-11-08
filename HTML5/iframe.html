@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style> 
+      article{
+          background-color: #eee;
+          margin-bottom: 10px;
+          padding: 10px;
+      }
+  </style>
+</head>
+<body>
+    <h1>html5 iframe</h1>
+    <article>
+        <h2>取父页面的值</h2>
+        <section>
+           <h3>通过取父页面节点的值获取数据</h3>
+           <p>
+             父页面可以创建一个div，赋予一个id。给该div中放置要传递的数据<br>
+             iframe页面中可以直接获取父页面节点id的值
+             window.parent.document.getElementById('').innerHtml
+           </p>
+        </section>
+    </article>
+</body>
+</html>

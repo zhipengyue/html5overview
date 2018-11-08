@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var objctsArr=[
+    //   {name:'李四',job:''},
+    //   {name:'张三',job:'works'}
+    // ]
+    // var newList=[
+    //   {name:'王五',job:'tof'},
+    //   {name:'李四',job:'fd3'}
+    // ]
+    // function bindData(){
+    //   var copylist=JSON.parse(JSON.stringify(objctsArr));
+    //   while(copylist.length)
+    // }
+    var array=[ {
+  "tenant_id" : "47SEB09",
+  "Timestamp_Local" : "",
+  "device_id" : "0000045Z2juH_1_auto_test_demo",
+  "K1" : "",
+  "K2" : "",
+  "_PROVINCE_" : "",
+  "_ONLINE_" : "",
+  "deviceId" : "25ETHMRZ0HC1",
+  "device_uuid" : "25ETHMRZ0HC1",
+  "time_cloud" : "2018-10-30 11:08:05.226",
+  "_DISTRICT_" : "",
+  "thing_version" : "4",
+  "_LOCATION_" : "98.98642599942343,22.61998800004048,,,1,0",
+  "_COUNTRY_" : "",
+  "thing_id" : "T25ETFEJT8XC1",
+  "time" : "1540868885000",
+  "_CITY_" : ""
+}, {
+  "tenant_id" : "",
+  "Timestamp_Local" : "",
+  "device_id" : "",
+  "K1" : "",
+  "K2" : "",
+  "_PROVINCE_" : "",
+  "_ONLINE_" : "",
+  "deviceId" : "25ETHMRZ0HC1",
+  "device_uuid" : "",
+  "time_cloud" : "",
+  "_DISTRICT_" : "",
+  "thing_version" : "",
+  "_LOCATION_" : "",
+  "_COUNTRY_" : "",
+  "thing_id" : "",
+  "time" : "1540283628000",
+  "_CITY_" : ""
+}, {
+  "tenant_id" : "",
+  "Timestamp_Local" : "",
+  "device_id" : "",
+  "K1" : "1.540868815E9",
+  "K2" : "1.54086881E8",
+  "_PROVINCE_" : "",
+  "_ONLINE_" : "",
+  "deviceId" : "25ETHMRZ0HC1",
+  "device_uuid" : "",
+  "time_cloud" : "",
+  "_DISTRICT_" : "",
+  "thing_version" : "",
+  "_LOCATION_" : "",
+  "_COUNTRY_" : "",
+  "thing_id" : "",
+  "time" : "1540868815000",
+  "_CITY_" : ""
+}, {
+  "tenant_id" : "",
+  "Timestamp_Local" : "",
+  "device_id" : "",
+  "K1" : "",
+  "K2" : "",
+  "_PROVINCE_" : "",
+  "_ONLINE_" : "",
+  "deviceId" : "25ETHMRZ0HC1",
+  "device_uuid" : "",
+  "time_cloud" : "",
+  "_DISTRICT_" : "",
+  "thing_version" : "",
+  "_LOCATION_" : "",
+  "_COUNTRY_" : "",
+  "thing_id" : "",
+  "time" : "1540866601000",
+  "_CITY_" : ""
+} ]
+  let result=[];
+  let maxLength=10;
+
+  setInterval(()=>{
+    setData()
+  },3000)
+  function setData(){
+    // result.push(...array);
+    let newList=JSON.parse(JSON.stringify(array));
+    newList.push({
+    "tenant_id" : "",
+    "Timestamp_Local" : "",
+    "device_id" : "",
+    "K1" : "",
+    "K2" : Math.random()*100+'_添加',
+    "_PROVINCE_" : "",
+    "_ONLINE_" : "",
+    "deviceId" : "25ETHMRZ0HC1",
+    "device_uuid" : "",
+    "time_cloud" : "",
+    "_DISTRICT_" : "",
+    "thing_version" : "",
+    "_LOCATION_" : "",
+    "_COUNTRY_" : "",
+    "thing_id" : "",
+    "time" : Math.random()*100000,
+    "_CITY_" : ""
+  })
+    bindData('time',newList);
+    // sortByTime();
+    deleteDataOutOfRange();
+    console.log(result);
+  }
+  function bindData(key,newList){
+    let list=JSON.parse(JSON.stringify(result));
+    let postData=[];
+    while(list.length>0){
+      // list[0][key]==
+      let index=-1;
+      for(let i=0;i<newList.length;i++){
+        if(list[0][key]===newList[i][key]){
+          index=i;
+        }
+      }
+      if(index>=0){
+        let bindObj=Object(list[0],newList[index]);
+        postData.push(bindObj);
+        newList.splice(index,1);
+      }
+      list.shift();
+    }
+    if(newList.length>0){
+      result.unshift(...newList);
+    }
+  }
+  function sortByTime(){
+    if(!result[0].time) return;
+    result.sort((a,b)=>{
+      return parseInt(b.time)-parseInt(a.time);
+    })
+  }
+  function deleteDataOutOfRange(type=null){
+    if(result.length>maxLength){
+      result.splice(maxLength-result.length,result.length-maxLength);
+    }
+  }
+  </script>
+</body>
+</html>

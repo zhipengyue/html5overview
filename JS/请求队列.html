@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  let params1={url:'1111',params:{'data':'1111'}}
+  let params2={url:'2222',params:{'data':'2222'}}
+  let requestList=[];
+  let maxRequestLength=10;
+  let index=0;
+  setInterval(()=>{
+      putParamsToList(params1)
+    },3000)
+  setTimeout(()=>{
+    setInterval(()=>{
+      putParamsToList(params2)
+    },3000)
+  },100)
+  var loop=setInterval(()=>{
+    index++;
+    if(requestList.length>0){
+      console.log(index+':'+JSON.stringify(requestList[0]));
+      requestList.shift();
+    }
+    console.log(requestList);
+  },3000)
+  function putParamsToList(params){
+    requestList.push(params)
+    if ( requestList.length > maxRequestLength ) {
+      let len = requestList.length - maxRequestLength;
+
+      console.log(maxRequestLength-requestList.length,len)
+      requestList.pop();
+    }
+  }
+  
+  </script>
+</body>
+</html>

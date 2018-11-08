@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+        section{
+            background-color: #eee;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        meta{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>html 基础</h1>
+    <section>
+        <h2>meta</h2>
+        <p>
+            定义针对搜索引擎的关键词：
+            <code><!--meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript" />--></code>
+            定义对页面的描述：
+            <code><!--meta name="description" content="免费的 web 技术教程。" />--></code>
+            定义页面的最新版本：
+            <code><!--mmeta name="revised" content="David, 2008/8/8/" />--></code>
+            每 5 秒刷新一次页面：
+            <code><!--meta http-equiv="refresh" content="5" />--></code>
+            强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览。
+            <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/> -->
+            WebApp全屏模式   隐藏地址栏。
+            <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+
+            制定iphone中safari顶端的状态条的样式（default:白色，black:黑色，black-translucent：半透明）
+            <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+        </p>
+    </section>
+
+    <section>
+        <h2>accessKey</h2>
+        <p> 
+            <form action="">
+                <div class="item">
+                    <span>name</span>
+                    <input type="text" accessyey="n">
+                </div>
+                <div class="item">
+                    <span>password</span>
+                    <input type="text" accesskey="p">
+                </div>
+            </form>
+        </p>
+    </section>
+
+    <section>
+        <h2>contenteditable</h2>
+        <p>
+            <div contenteditable="true">可以编辑的div</div>
+        </p>
+    </section>
+    <section>
+        <h2>contextmenu</h2>
+        <p>
+            <div contextmenu="eleven">右击查看菜单</div>
+        </p>
+    </section>
+    <section>
+        <h2>dir</h2>
+        <p>
+            <div dir="ltr">ltr</div>
+            <div dir="rtl">rtl</div>
+        </p>
+    </section>
+    <section>
+        <h2>draggble</h2>
+        <p>
+            <div draggable="true">可拖拽</div>
+            <div dropzone="dropComplete(event)">
+                接收拖拽容器
+            </div>
+        </p>
+    </section>
+    <section>
+        <h2>spellcheck</h2>
+        <p>
+            检查拼写
+            <textarea name="" id="" cols="30" rows="10" spellcheck="true">
+                
+            </textarea>
+        </p>
+    </section>
+    <section>
+        <h2>tabindex</h2>
+        <p>
+            按下tab键时切换
+            <div><input type="text" tabindex="1"></div>
+            <div><input type="text" tabindex="2"></div>
+        </p>
+    </section>
+    <section>
+        <h2>相对长度</h2>
+        <p>
+            <ul>
+                <li>vw</li>
+                <li>vh</li>
+                <li>vmin</li>
+                <li>vmax</li>
+                <li>calc( 100% - 10px )</li>
+                <li>px</li>
+                <li>rem</li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>角度</h2>
+        <p>
+            <ul>
+                <li>deg 度 0～360</li>
+                <li>grad 百分比 0~400</li>
+                <li>rad 弧度 0～6.28</li>
+                <li>turn 圆周 1turn=360deg</li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>像素</h2>
+        <p>
+            css中的像素，一像素约等于一英寸的1/96
+        </p>
+    </section>
+    <section>
+        <h2>
+            script标签 defer async
+        </h2>
+        <p>
+            一般情况下在html中，把script标签会放在body最后面。
+            在script标签中加入defer属性，会达到同样的目的
+            async 属性，是异步执行，一般是没有依赖，或是不依赖dom的js，可以加入此属性
+        </p>
+    </section>
+    <script>
+        function dropComplete(event){
+            console.log(event);
+        }
+    </script>
+</body>
+</html>

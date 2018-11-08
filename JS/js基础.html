@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+        section{
+            background-color: #eee;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        meta{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>js 基础</h1>
+    <section>
+        <h2>数据类型</h2>
+        <p>
+            <ul>
+                <li>Object</li>
+                <li>Array</li>
+                <li>String</li>
+                <li>Number</li>
+                <li>Boolean</li>
+                <li>Function</li>
+                <li>undefind</li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>null 与 undefined的 区别</h2>
+        <p>
+            null 为未赋值
+            undefined 为未定义
+            typeOf(null) 输出 'object'
+            typeOf(undefind) 输出 'undefined'
+            同时对一个为定义的变量，进行typeOf操作,得到的同样是 'undefined'字符串
+            Number(null) 输出 0
+            Number(undefined)  输出 Nan
+            typeOf(Nan)  输出 'number'
+
+        </p>
+    </section>
+    <section>
+        <h2>循环遍历</h2>
+        <ul>
+            <li>for</li>
+            <li>for in</li>
+            <li>while</li>
+            <li>do...while</li>
+            <!--数组方法-->
+            <li>forEatch</li>
+            <li>every</li>
+            <li>find</li>
+            <li>some</li>
+            <li>map</li>
+        </ul>
+    </section>
+    <article>
+        <h2>对象</h2>
+        <section>
+            <h3>判断对象是否拥有某个属性</h3>
+            <p>
+                <ul>
+                    <li>方法一：if(object['arribute'])</li>
+                    <li>方法二：if('arribute' in object)</li>
+                </ul>
+            </p>
+        </section>
+    </article>
+    <section>
+        <h2>==与===</h2>
+        <p>
+            ==如果类型不同，==会对数据进行类型转换，转换完进行===比较，如果相同则返回true否则返回false
+            ===则先判断类型是否相同，类型不同直接返回false
+            null==undefined //true
+        </p>
+    </section>
+    <article>
+        <h2>String</h2>
+        <section>
+            <h3>数值转换</h3>
+            <ul>
+                <li>
+                    toString() <br>
+                    toString(2) 转换为2进制
+
+                </li>
+                <li>
+                    toFixed() <br>
+                    (5.123).toFixed(5) <br>
+                    "5.12300"
+                </li>
+                <li>
+                    toExponential() <br>
+                    (5.123).toExponential(5) <br>
+                    "5.12300e+0"
+                </li>
+                <li>
+                    toPrecision() <br>
+                    (5.123).toFixed(5) <br>
+
+                </li>
+            </ul>
+        </section>
+    </article>
+    <article>
+        <h2>Array</h2>
+        <section>
+            <h3>内置方法</h3>
+            <ul>
+                <li>contact 合并为一个新数组</li>
+                <li>join 数组元素组成组成字符串 example:[1,2,3].join('|') => "1|2|3"</li>
+                <li>pop() 删除数组最后一个</li>
+                <li>shift() 删除数组第一个</li>
+                <li>push()</li>
+                <li>unshift</li>
+                <li>sort</li>
+                <li>slice</li>
+            </ul>
+        </section>
+    </article>
+</body>
+</html>

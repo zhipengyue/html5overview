@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var originObj={
+    "/auth": {
+        "target": "http://127.0.0.1:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/auth": "/auth"
+        }
+    },
+    "/saas-base": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-base": "/saas-base"
+        }
+    },
+    "/saas-aba-portal": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-aba-portal": "/saas-aba-portal"
+        }
+    },
+    "/saas-gba-bang": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-bang": "/saas-gba-bang"
+        }
+    },
+    "/saas-aba-base": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-aba-base": "/saas-aba-base"
+        }
+    },
+    "/api": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api": "/api"
+        }
+    },
+    "/saas-aba-bpm": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-aba-bpm": "/saas-aba-bpm"
+        }
+    },
+    "/saas-gba-icsm": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-icsm": "/saas-gba-icsm"
+        }
+    },
+    "/saas-bpm-activiti": {
+        "target": "http://127.0.0.1:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-bpm-activiti": "/"
+        }
+    },
+    "/service": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/service": "/service"
+        }
+    },
+    "/saas-gba-eu": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-eu": "/saas-gba-eu"
+        }
+    },
+    "/saas-gba-plan": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-plan": "/saas-gba-plan"
+        }
+    },
+    "/saas-gba-part": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-part": "/saas-gba-part"
+        }
+    },
+    "/saas-gba-inspect": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-inspect": "/saas-gba-inspect"
+        }
+    },
+    "/saas-gba-device-ledger": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-device-ledger": "/saas-gba-device-ledger"
+        }
+    },
+    "/saas-aba-customize": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-aba-customize": "/saas-aba-customize"
+        }
+    },
+    "/saas-gba-service-item": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-service-item": "/saas-gba-service-item"
+        }
+    },
+    "/saas-gba-commands": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-commands": "/saas-gba-commands"
+        }
+    },
+    "/saas-gba-position-manager": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-position-manager": "/saas-gba-position-manager"
+        }
+    },
+    "/service-mxdl-report": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/service-mxdl-report": "/service-mxdl-report"
+        }
+    },
+    "/boss-identity": {
+        "target": "http://boss-gateway.bdn_boss-dev.irootechapp.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/boss-identity": "/boss-identity"
+        }
+    },
+    "/service-szhr-report": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/service-szhr-report": "/service-szhr-report"
+        }
+    },
+    "/service-gzcy-report": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/service-gzcy-report": "/service-gzcy-report"
+        }
+    },
+    "/service-hzjj-device": {
+        "target": "http://boss-gateway.bdn_boss-dev.irootechapp.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/service-hzjj-device": "/service-hzjj-device"
+        }
+    },
+    "/service-hzjj-healthy": {
+        "target": "http://boss-gateway.bdn_boss-dev.irootechapp.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/service-hzjj-healthy": "/service-hzjj-healthy"
+        }
+    },
+  "/service-hzjj-screen": {
+    "target": "http://saas-gateway-alauda-qa.irootech.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/service-hzjj-screen": "/service-hzjj-screen"
+    },
+    "/saas-gba-unlock-htjw": {
+        "target": "http://saas-gateway-alauda-qa.irootech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/saas-gba-unlock-htjw": "/saas-gba-unlock-htjw"
+        }
+    }
+  }
+}
+transform(originObj);
+  function transform(origin){
+    let postObj=``;
+    Object.keys(origin).forEach(key=>{
+      postObj+=`
+      location ${key}  {
+           proxy_pass   http://kd-uop.bdn-saas-alauda-qa.rootcloudapp.com${key};
+      }
+      `
+    })
+    console.log(postObj)
+  }  
+  </script>
+</body>
+</html>
